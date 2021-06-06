@@ -1,22 +1,29 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
-const StyledDiv = styled.div`
-  width: 100%;
-  background: rebeccapurple;
+const Wrapper = styled.div`
+  background: #f1f1f1;
+
+  div {
+    display: inline-block;
+    padding: 1rem;
+    background: white;
+  }
 `
 
 
-const Station = ({name}) => {
+const Station = ({name, available}) => {
 /* const { stationId, setStationId } = useState({id: ''})
 
 const handleClick = (stationId) => {
     setStationId({id: stationId})
   } */
   return (
-    <div>
-        {name}
-    </div>
+    <Wrapper>
+        <div>{name}</div>
+        {available > 0 ? <button>online</button> :  <button>offline</button>}
+    </Wrapper>
+
   );
 }
 

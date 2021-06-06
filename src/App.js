@@ -1,25 +1,32 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom"
+import { Reset } from 'styled-reset'
 
 import { stations } from "./data"
 import Stations from './Stations'
 
-const StyledDiv = styled.div`
+const Wrapper = styled.ul`
+  background: #f1f1f1;
+`
+const StyledLink = styled(Link)`
   width: 100%;
-  background: rebeccapurple;
+  background: red;
 `
 
 
 const App = () => {
-const { stationId, setStationId } = useState({id: ''})
-
   return (
-    <ul>
+    <React.Fragment>
+    <Reset />
+    <Wrapper>
       {stations.length > 0 && stations.map((station) =>
-        <Link to={{ pathname: `/station/${station.name}`, state: station}}><Stations key={station.id} {...station}/></Link>
+        <StyledLink to={{ pathname: `/station/${station.name}`, state: station}}>
+          <Stations key={station.id} {...station}/>
+        </StyledLink>
       )}
-    </ul>
+    </Wrapper>
+    </React.Fragment>
   );
 }
 
