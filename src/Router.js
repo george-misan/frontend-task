@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import App from "./App"
-import Station from "./Station"
+import Station from "./components/Station"
 
 const Router = () => {
 return (
