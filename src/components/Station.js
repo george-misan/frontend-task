@@ -100,7 +100,6 @@ span{
 `
 
 const Station = (props) => {
-    /* const { station_ID, custom_evse_id, location_ID, seller_ID, name, connected, position, available, lastconnect, roaming_identifier_cpo } = props.location.state */
     const { state } = props.location
   return (
     <>
